@@ -48,6 +48,8 @@ gem 'bootstrap-sass', '~> 3.1.1'
 # User authentication
 gem 'devise'
 
+# User authorization
+gem 'pundit'
 
 # Secure application
 gem 'figaro', '1.0'
