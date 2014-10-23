@@ -47,3 +47,7 @@ gem 'bootstrap-sass', '~> 3.1.1'
 
 # User authentication
 gem 'devise'
+
+
+# Secure application
+gem 'figaro', '1.0'
