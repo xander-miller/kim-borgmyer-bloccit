@@ -1,4 +1,4 @@
-if Rails.env.development?
+if Rails.env.development? || Rails.env.production?
 
   ActionMailer::Base.delivery_method = :smtp
 
