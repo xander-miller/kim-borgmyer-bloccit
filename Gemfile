@@ -53,3 +53,6 @@ gem 'pundit'
 
 # Secure application
 gem 'figaro', '1.0'
+
+# Allow markdown
+gem 'redcarpet'
