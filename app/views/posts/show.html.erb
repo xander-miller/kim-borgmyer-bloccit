@@ -1,4 +1,7 @@
-<h1><%= markdown @post.title %></h1>
+<h1>
+  <%= image_tag( @post.image.thumb.url ) if @post.image? %>
+  <%= markdown @post.title %>
+</h1>
 
 <div class="row">
 
