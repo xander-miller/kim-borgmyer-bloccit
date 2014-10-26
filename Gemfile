@@ -56,3 +56,8 @@ gem 'figaro', '1.0'
 
 # Allow markdown
 gem 'redcarpet'
+
+# Upload images
+gem 'carrierwave'
+gem 'mini_magick'
+gem 'fog'
