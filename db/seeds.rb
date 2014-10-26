@@ -41,7 +41,7 @@ end
 topics = Topic.all
 
 # Create Posts
-50.times do
+300.times do
 
   Post.create!(
 

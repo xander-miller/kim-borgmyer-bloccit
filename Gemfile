@@ -61,3 +61,6 @@ gem 'redcarpet'
 gem 'carrierwave'
 gem 'mini_magick'
 gem 'fog'
+
+# Pagination
+gem 'will_paginate', '~> 3.0.5'
