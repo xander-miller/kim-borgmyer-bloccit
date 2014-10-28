@@ -23,6 +23,10 @@
       <%= link_to "Edit", [ :edit, @topic, @post ], class: 'btn btn-success' %>
     <% end %>
 
+    <% if policy( @post ).destroy? %>
+      <p><%= link_to "Delete Post", [ @topic, @post ], method: :delete, class: 'btn btn-danger', data: { confirm: 'Are you sure?' } %></p>
+    <% end %>
+
   </div>
 
   <div class="col-md-8">

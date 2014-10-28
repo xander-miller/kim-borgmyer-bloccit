@@ -39,8 +39,13 @@
   </div>
 
   <div class="col-md-4">
+
     <% if policy( Post.new ).create? %>
       <%= link_to "New Post", new_topic_post_path( @topic ), class: 'btn btn-success' %>
+    <% end %>
+
+    <% if policy( @topic ).destroy? %>
+      <p><%= link_to "Delete Topic", @topic, method: :delete, class: 'btn btn-danger', data: { confirm: 'Are you sure?' } %></p>
     <% end %>
 
   </div>

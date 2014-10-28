@@ -3,11 +3,17 @@
   <div class="media">
     <div class="media-body">
 
-        <p><%= comment.body %></p>
         <small>
-          submitted <%= time_ago_in_words( comment.created_at ) %> ago by
-          <%= comment.user.name %>
+
+          <%= comment.user.name %> commented <%= time_ago_in_words( comment.created_at ) %> ago
+
+          <% if policy( comment ).destroy? %>
+            <%= link_to "Delete", [ @topic, @post, comment ], method: :delete %>
+          <% end %>
+
         </small>
+
+        <p><%= comment.body %></p>
 
     </div>
   </div>
