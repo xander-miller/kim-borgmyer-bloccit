@@ -41,7 +41,7 @@ end
 topics = Topic.all
 
 # Create Posts
-300.times do
+200.times do
 
   Post.create!(
 
@@ -56,11 +56,12 @@ end
 posts = Post.all
 
 # Create Comments
-100.times do
+400.times do
 
   Comment.create!(
 
     post: posts.sample,
+    user: users.sample,
     body: Faker::Lorem.paragraph
 
   )

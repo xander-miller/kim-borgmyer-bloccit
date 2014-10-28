@@ -5,6 +5,8 @@ class User < ActiveRecord::Base
            :confirmable
 
   has_many :posts
+  has_many :comments
+  
   mount_uploader :avatar, AvatarUploader
 
   def admin?

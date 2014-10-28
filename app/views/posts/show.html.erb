@@ -25,4 +25,18 @@
 
   </div>
 
+  <div class="col-md-8">
+
+    <h2><%= pluralize( @comments.count, 'Comment' ) %></h2>
+    <%= render partial: 'comments/comment' %>
+
+  </div>
+
+  <div class="col-md-8">
+    
+    <%= render partial: 'comments/form', locals: { topic: @topic, post: @post, comment: @post.comments.new } %>
+    <%= will_paginate @comments %>
+
+  </div>
+
 </div>
