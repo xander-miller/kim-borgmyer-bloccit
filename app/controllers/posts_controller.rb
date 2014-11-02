@@ -1,21 +1,5 @@
 class PostsController < ApplicationController
 
-  def show
-
-    @topic = Topic.find( params[ :topic_id ] )
-    @post = Post.find( params[ :id ] ) 
-    @comments = @post.comments.paginate( page: params[ :page ], per_page: 10 )
-
-  end
-
-  def new
-
-    @topic = Topic.find( params[ :topic_id ] )
-    @post = Post.new
-    authorize @post
-
-  end
-
   def create
 
     @topic = Topic.find( params[ :topic_id ] )
@@ -34,11 +18,44 @@ class PostsController < ApplicationController
 
   end
 
+  def destroy
+
+    @topic = Topic.find( params[ :topic_id ] )
+    @post = Post.find( params[ :id ] )
+    authorize @post
+
+    if @post.destroy
+      flash[ :notice ] = "Post was deleted."
+      redirect_to @topic
+    else
+      flash[ :error ] = "Error deleting post.  Please try again."
+      render :show
+    end
+
+  end
+
   def edit
 
     @topic = Topic.find( params[ :topic_id ] )
     @post = Post.find( params[ :id ] )
     authorize @post
+
+  end
+
+  def new
+
+    @topic = Topic.find( params[ :topic_id ] )
+    @post = Post.new
+    authorize @post
+
+  end
+
+  def show
+
+    @topic = Topic.find( params[ :topic_id ] )
+    @post = Post.find( params[ :id ] ) 
+    @comments = @post.comments.paginate( page: params[ :page ], per_page: 10 )
+    authorize @topic
 
   end
 
@@ -56,22 +73,6 @@ class PostsController < ApplicationController
       render :edit
     end
     
-  end
-
-  def destroy
-
-    @topic = Topic.find( params[ :topic_id ] )
-    @post = Post.find( params[ :id ] )
-    authorize @post
-
-    if @post.destroy
-      flash[ :notice ] = "Post was deleted."
-      redirect_to @topic
-    else
-      flash[ :error ] = "Error deleting post.  Please try again."
-      render :show
-    end
-
   end
 
   private
