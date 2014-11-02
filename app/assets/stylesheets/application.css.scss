@@ -1,11 +1,15 @@
 @import "bootstrap";
 
-.user-info {
-  margin-top: 9px;
+.favorite {
+  margin-top: 20px;
 }
 
 .nav {
   margin-top: 5px;
+}
+
+.user-info {
+  margin-top: 9px;
 }
 
 .vote-arrows {
@@ -13,6 +17,6 @@
   text-align: center;
 }
 
-.favorite {
-  margin-top: 20px;
+.voted {
+  opacity: 0.5;
 }

@@ -15,12 +15,16 @@ class User < ActiveRecord::Base
     role == 'admin'
   end
 
+  def favorited( post )
+    favorites.where( post_id: post.id ).first
+  end
+
   def moderator?
     role == 'moderator'
   end
 
-  def favorited( post )
-    favorites.where( post_id: post.id ).first
+  def voted( post )
+    votes.where( post_id: post.id ).first
   end
 
 end
