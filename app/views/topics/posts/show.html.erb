@@ -41,7 +41,7 @@
 
   <div class="col-md-8">
     <h2><%= pluralize( @comments.count, 'Comment' ) %></h2>
-    <%= render partial: 'comments/comment' %>
+    <%= render partial: 'comments/comment', collection: @comments %>
   </div>
 
   <div class="col-md-8">
