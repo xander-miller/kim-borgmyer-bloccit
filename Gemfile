@@ -71,3 +71,6 @@ gem 'fog'
 
 # Pagination
 gem 'will_paginate', '~> 3.0.5'
+
+# Performance monitoring
+gem 'newrelic_rpm'
