@@ -1,6 +1,6 @@
 <% if policy( comment ).create? %>
 
-  <%= form_for [ post, comment ] do | f | %>
+  <%= form_for [ post, comment ], remote: true do | f | %>
 
     <div class="form-group">
 
